@@ -63,10 +63,10 @@ Make this summary together in your group.
 Now that you build up the cluster: What did you learn personally regarding setting up a Ceph-cluster. Get as technical as possible. Make this part for yourself.
 
 ### Orkun
-Networking and SSH Keys: Ensuring proper IP configuration and passwordless SSH access between nodes was crucial. Any misconfiguration here can block deployment.
-OSD Management and LVM: Understanding how Ceph manages storage through LVM was important. Installing lvm2 on OSD hosts ensures smooth OSD creation and management.
-Verification and Health Checks: Running status commands (ceph status, ceph health, ceph orch device ls) reinforced how critical it is to regularly verify cluster health and performance.
-Access Through cephadm shell: Gaining familiarity with cephadm shell gave me a clean, consistent way to run Ceph commands without leaving the host environment. This provided quick access to health checks, device listings, and status reports, ensuring smoother troubleshooting and cluster management.
+* Networking and SSH Keys: Ensuring proper IP configuration and passwordless SSH access between nodes was crucial. Any misconfiguration here can block deployment.
+* OSD Management and LVM: Understanding how Ceph manages storage through LVM was important. Installing lvm2 on OSD hosts ensures smooth OSD creation and management.
+* Verification and Health Checks: Running status commands (ceph status, ceph health, ceph orch device ls) reinforced how critical it is to regularly verify cluster health and performance.
+* Access Through cephadm shell: Gaining familiarity with cephadm shell gave me a clean, consistent way to run Ceph commands without leaving the host environment. This provided quick access to health checks, device listings, and status reports, ensuring smoother troubleshooting and cluster management.
 
 ### Timon
 Docker Dependency: I learned that Ceph relies on Docker - you need to install Docker first on all nodes, or nothing works.

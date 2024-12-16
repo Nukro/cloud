@@ -1,9 +1,14 @@
 # Building Ceph
 
+## Create a Ceph Cluster
+* Create Switch Engine Machines
+First we have created the four machines monitor01, osd01, osd02 and osd03 with each initial 10GB Disk Space for the OS and additional 40GB volumes that are attached to it
 
 ## Building up the platform together
 
-Describe all steps building the cluster with commands. 
+Describe all steps building the cluster with commands.
+
+
 On which steps above did you have technical problems? What was the problem? How did you solved it? If you proceed to Part 3, how did you implement the load balancing?
 Make subparagraphs for each point. 
 Make this summary together in your group.

@@ -17,7 +17,7 @@ First we have created the four machines monitor01, osd01, osd02 and osd03 with e
 `sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 
-### 1.3 Install Cephadm
+### 1.3 Install Cephadm (monitor01)
 Add missing statements...
 
 ### 1.4 Boostrap a new Cluster (monitor01)
@@ -35,7 +35,7 @@ Copy the ssh-key from /root/.ssh/authorized_keys to the three osd machines (osd0
 `sudo cephadm shell ceph orch host add osd02 10.0.3.21`\
 `sudo cephadm shell ceph orch host add osd03 10.0.0.113`
 
-### 1.8 Verifying if everything works as expected
+### 1.8 Verifying if everything works as expected (monitor01)
 `sudo cephadm shell ceph orch device ls`\
 `sudo cephadm shell ceph osd tree`\
 `sudo cephadm shell ceph status`\
@@ -58,11 +58,11 @@ Copy the ssh-key from /root/.ssh/authorized_keys to the three osd machines (osd0
 
 ## 3. File Storage, CephFS
 
-### 3.1 Create CephFS Filesystem
+### 3.1 Create CephFS Filesystem (monitor01)
 `sudo cephadm shell -- ceph fs volume create cephfs-cloudfhnw`\
 `sudo cephadm shell -- ceph fs ls`
 
-### 3.2 Create CephFS client
+### 3.2 Create CephFS client (monitor01)
 `sudo cephadm shell -- ceph auth del client.02-cloudfhnw-cephfs 2>/dev/null`\
 `sudo cephadm shell -- ceph fs authorize cephfs-cloudfhnw client.02-cloudfhnw-cephfs / rw`\
 `sudo cephadm shell -- ceph auth get client.02-cloudfhnw-cephfs`\

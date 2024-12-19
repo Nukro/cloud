@@ -17,8 +17,31 @@ First we have created the four machines monitor01, osd01, osd02 and osd03 with e
 `sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 
-### 1.3 Install Cephadm (monitor01)
-Add missing statements...
+### 1.3 Install Cephadm (monitor01)``
+We are not 100% sure what now actually installed Cephadm, we both executed different commands and one of our two commands installed it.
+
+What Timon did: 
+```
+      echo "Installing prerequisites..."
+        sudo apt-get update
+        sudo apt-get install -y curl gpg
+
+        echo "Adding Ceph repository..."
+        curl -fsSL https://download.ceph.com/keys/release.asc | sudo gpg --dearmor -o /usr/share/keyrings/ceph-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/ceph-archive-keyring.gpg] https://download.ceph.com/debian-pacific/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/ceph.list
+
+        echo "Installing Ceph packages..."
+        sudo apt-get update
+        sudo apt-get install -y ceph ceph-common
+
+        echo "Installing cephadm..."
+        curl --silent --remote-name --location https://github.com/ceph/ceph/raw/pacific/src/cephadm/cephadm
+        chmod +x cephadm
+        sudo mv cephadm /usr/local/bin/
+```
+
+What Orkun did:
+`sudo apt install cephadm`
 
 ### 1.4 Boostrap a new Cluster (monitor01)
 `sudo cephadm bootstrap --mon-ip 10.0.5.77`

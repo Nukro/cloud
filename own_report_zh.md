@@ -44,7 +44,7 @@ What Orkun did:
 `sudo apt install cephadm`
 
 ### 1.4 Boostrap a new Cluster (monitor01)
-`sudo cephadm bootstrap --mon-ip 10.0.5.77`
+`sudo cephadm bootstrap --mon-ip 10.0.8.245`
 
 ### 1.5 Copying SSH-Keys to osd machines
 Copy the ssh-key from /root/.ssh/authorized_keys to the three osd machines (osd01, osd02, osd03) and test if you cann ssh from monitor01 to the osd machines.
@@ -54,9 +54,9 @@ Copy the ssh-key from /root/.ssh/authorized_keys to the three osd machines (osd0
 `sudo apt-get install lvm2`
 
 ### 1.7 Adding hosts to the cluster (monitor01)
-`sudo cephadm shell ceph orch host add osd01 10.0.2.171`\
-`sudo cephadm shell ceph orch host add osd02 10.0.3.21`\
-`sudo cephadm shell ceph orch host add osd03 10.0.0.113`
+`sudo cephadm shell ceph orch host add osd01 10.0.0.199`\
+`sudo cephadm shell ceph orch host add osd02 10.0.5.147`\
+`sudo cephadm shell ceph orch host add osd03 10.0.3.249`
 
 ### 1.8 Verifying if everything works as expected (monitor01)
 `sudo cephadm shell ceph orch device ls`\
@@ -92,16 +92,11 @@ Copy the ssh-key from /root/.ssh/authorized_keys to the three osd machines (osd0
 
 
 ## Technical Problems
-On which steps above did you have technical problems? 
-What was the problem? How did you solved it? 
-If you proceed to Part 3, how did you implement the load balancing?
-Make subparagraphs for each point. 
-Make this summary together in your group.
 
 ### Can't use ceph command
 * Step: Access to ceph command
 * What: Encountered a "command not found" or permission error when trying to run `ceph` directly on the host.
-* Solved via: Using `sudo cephadm shell` before the command to enter the Ceph container environment, ensuring that the `ceph` CLI and its dependencies are properly available.
+* Solved via: Using `cephadm add-repo --release squid` & `cephadm install ceph-common` to install the ceph cli, ensuring that the `ceph` CLI and its dependencies are properly available.
 
 ### Can't add Hosts to Cluster
 * Step: Adding new Host to Cluster
